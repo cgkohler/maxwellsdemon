@@ -88,16 +88,27 @@ a {
 
 /* Company name */
 .company-name {
-  font-size: clamp(4rem, 12vw, 10rem);
+  position: fixed;
+  top: 50%;
+  left: 25px;
+  right: 25px;
+  width: calc(100vw - 50px);
+  transform: translateY(-50%);
+  font-size: clamp(3rem, calc((100vw - 50px) / 12), 12rem);
   font-weight: 300;
   letter-spacing: -0.02em;
   line-height: 0.9;
   color: #e8e8f0;
-  margin-bottom: 8rem;
-  transform: translateX(-2%);
+  margin: 0;
+  padding: 0;
   font-family: 'Georgia', 'Times New Roman', serif;
   text-transform: uppercase;
   opacity: 0.95;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: font-size 0.3s ease;
+  z-index: 20;
 }
 
 /* Hero content */
@@ -135,8 +146,9 @@ a {
   }
   
   .company-name {
-    margin-bottom: 4rem;
-    transform: translateX(0);
+    left: 25px;
+    right: 25px;
+    width: calc(100% - 50px);
   }
   
   .hero-content {
