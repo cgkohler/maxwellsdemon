@@ -1,0 +1,181 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  background: #0a0a0f;
+  color: #e8e8f0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Landing Page Styles */
+.landing-page {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #0a0a0f;
+}
+
+/* Color blocks - Rothko Chapel inspired */
+.color-block {
+  position: absolute;
+  opacity: 0.4;
+  transition: opacity 0.8s ease;
+}
+
+.color-block-1 {
+  top: -10%;
+  left: -5%;
+  width: 45%;
+  height: 60%;
+  background: linear-gradient(135deg, #1a0d2e 0%, #2d1b4e 50%, #1a0d2e 100%);
+  border-radius: 0 0 100% 0;
+  transform: rotate(-5deg);
+}
+
+.color-block-2 {
+  top: 30%;
+  right: -8%;
+  width: 50%;
+  height: 50%;
+  background: linear-gradient(225deg, #0d1b2a 0%, #1b263b 50%, #0d1b2a 100%);
+  border-radius: 100% 0 0 0;
+  transform: rotate(8deg);
+}
+
+.color-block-3 {
+  bottom: -15%;
+  left: 15%;
+  width: 40%;
+  height: 45%;
+  background: linear-gradient(45deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%);
+  border-radius: 50%;
+  transform: rotate(-12deg);
+}
+
+/* Content wrapper */
+.content-wrapper {
+  position: relative;
+  z-index: 10;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 4rem;
+  max-width: 1400px;
+  margin-left: 8%;
+}
+
+/* Company name */
+.company-name {
+  font-size: clamp(4rem, 12vw, 10rem);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 0.9;
+  color: #e8e8f0;
+  margin-bottom: 8rem;
+  transform: translateX(-2%);
+  font-family: 'Georgia', 'Times New Roman', serif;
+  text-transform: uppercase;
+  opacity: 0.95;
+}
+
+/* Hero content */
+.hero-content {
+  max-width: 680px;
+  transform: translateX(3%);
+  margin-top: 2rem;
+}
+
+.hero-text {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.4;
+  color: #d4d4e8;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.01em;
+  opacity: 0.92;
+}
+
+.sub-text {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: #b8b8c8;
+  max-width: 580px;
+  letter-spacing: 0.01em;
+  opacity: 0.85;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 3rem 2rem;
+    margin-left: 5%;
+  }
+  
+  .company-name {
+    margin-bottom: 4rem;
+    transform: translateX(0);
+  }
+  
+  .hero-content {
+    transform: translateX(0);
+  }
+  
+  .color-block-1 {
+    width: 60%;
+    height: 50%;
+  }
+  
+  .color-block-2 {
+    width: 65%;
+    height: 45%;
+  }
+  
+  .color-block-3 {
+    width: 55%;
+    height: 40%;
+  }
+}
+
+/* Subtle animation on load */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.company-name {
+  animation: fadeIn 1.2s ease-out;
+}
+
+.hero-content {
+  animation: fadeIn 1.4s ease-out 0.3s both;
+}
+
