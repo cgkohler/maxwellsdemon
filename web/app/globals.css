@@ -99,12 +99,12 @@ a:hover {
 }
 
 .hero-subtitle {
-  font-size: 25px;
-  font-weight: 500;
+  font-size: 30px;
+  font-weight: 300;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.5;
   color: #333333;
-  max-width: 800px;
+  max-width: 900px;
   margin-top: 2rem;
 }
 
