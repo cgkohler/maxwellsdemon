@@ -4,174 +4,280 @@
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  height: 100%;
 }
 
 body {
-  background: #0a0a0f;
-  color: #e8e8f0;
+  background: #ffffff;
+  color: #000000;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
+  line-height: 1.6;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  transition: opacity 0.2s ease;
 }
 
-/* Landing Page Styles */
-.landing-page {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background: #0a0a0f;
+a:hover {
+  opacity: 0.7;
 }
 
-/* Color blocks - Rothko Chapel inspired */
-.color-block {
-  position: absolute;
-  opacity: 0.4;
-  transition: opacity 0.8s ease;
+/* Main Container */
+.main-container {
+  width: 100%;
+  min-height: 100vh;
 }
 
-.color-block-1 {
-  top: -10%;
-  left: -5%;
-  width: 45%;
-  height: 60%;
-  background: linear-gradient(135deg, #1a0d2e 0%, #2d1b4e 50%, #1a0d2e 100%);
-  border-radius: 0 0 100% 0;
-  transform: rotate(-5deg);
-}
-
-.color-block-2 {
-  top: 30%;
-  right: -8%;
-  width: 50%;
-  height: 50%;
-  background: linear-gradient(225deg, #0d1b2a 0%, #1b263b 50%, #0d1b2a 100%);
-  border-radius: 100% 0 0 0;
-  transform: rotate(8deg);
-}
-
-.color-block-3 {
-  bottom: -15%;
-  left: 15%;
-  width: 40%;
-  height: 45%;
-  background: linear-gradient(45deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%);
-  border-radius: 50%;
-  transform: rotate(-12deg);
-}
-
-/* Content wrapper */
-.content-wrapper {
-  position: relative;
-  z-index: 10;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 5rem 4rem;
-  max-width: 1400px;
-  margin-left: 8%;
-}
-
-/* Company name */
-.company-name {
+/* Navigation */
+.nav {
   position: fixed;
-  top: 50%;
-  left: 25px;
-  right: 25px;
-  width: calc(100vw - 50px);
-  transform: translateY(-50%);
-  font-size: clamp(3rem, calc((100vw - 50px) / 12), 12rem);
-  font-weight: 300;
-  letter-spacing: -0.02em;
-  line-height: 0.9;
-  color: #e8e8f0;
-  margin: 0;
-  padding: 0;
-  font-family: 'Georgia', 'Times New Roman', serif;
-  text-transform: uppercase;
-  opacity: 0.95;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: font-size 0.3s ease;
-  z-index: 20;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-/* Hero content */
-.hero-content {
-  max-width: 680px;
-  transform: translateX(3%);
+.nav-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-size: 0.95rem;
+  font-weight: 400;
+}
+
+/* Hero Section */
+.hero {
+  padding: 12rem 2rem 8rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 8vw, 8rem);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 2rem;
+  color: #000000;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+  font-weight: 400;
+  line-height: 1.5;
+  color: #333333;
+  max-width: 800px;
   margin-top: 2rem;
 }
 
-.hero-text {
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  font-weight: 400;
-  line-height: 1.4;
-  color: #d4d4e8;
-  margin-bottom: 2.5rem;
-  letter-spacing: -0.01em;
-  opacity: 0.92;
+/* Companies Section */
+.companies {
+  padding: 6rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-.sub-text {
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
+.companies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 3rem 2rem;
+  margin-bottom: 3rem;
+}
+
+.company-logo {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999999;
+  font-size: 0.9rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+  transition: border-color 0.2s ease;
+}
+
+.company-logo:hover {
+  border-color: #cccccc;
+}
+
+.view-all-link {
+  display: inline-block;
+  font-size: 1rem;
+  color: #666666;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Philosophy Section */
+.philosophy {
+  padding: 8rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 300;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+}
+
+.philosophy-intro {
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
   line-height: 1.7;
-  color: #b8b8c8;
-  max-width: 580px;
-  letter-spacing: 0.01em;
-  opacity: 0.85;
+  color: #333333;
+  max-width: 900px;
+  margin-bottom: 5rem;
 }
 
-/* Responsive adjustments */
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 4rem 3rem;
+  margin-bottom: 4rem;
+}
+
+.philosophy-item {
+  max-width: 400px;
+}
+
+.philosophy-title {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+}
+
+.philosophy-description {
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  line-height: 1.7;
+  color: #555555;
+}
+
+.meet-team-link {
+  display: inline-block;
+  font-size: 1rem;
+  color: #666666;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Footer */
+.footer {
+  padding: 4rem 2rem 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-top: 1px solid #e5e5e5;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.footer-copyright {
+  font-size: 0.9rem;
+  color: #999999;
+  margin-bottom: 1rem;
+}
+
+.footer-address {
+  font-size: 0.95rem;
+  color: #666666;
+  line-height: 1.7;
+}
+
+.footer-email {
+  font-size: 0.95rem;
+  color: #000000;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-link {
+  font-size: 0.95rem;
+  color: #666666;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .content-wrapper {
-    padding: 3rem 2rem;
-    margin-left: 5%;
+  .nav-content {
+    padding: 1rem 1.5rem;
   }
-  
-  .company-name {
-    left: 25px;
-    right: 25px;
-    width: calc(100% - 50px);
+
+  .nav-links {
+    gap: 1.5rem;
   }
-  
-  .hero-content {
-    transform: translateX(0);
+
+  .hero {
+    padding: 8rem 1.5rem 6rem;
   }
-  
-  .color-block-1 {
-    width: 60%;
-    height: 50%;
+
+  .companies {
+    padding: 4rem 1.5rem;
   }
-  
-  .color-block-2 {
-    width: 65%;
-    height: 45%;
+
+  .companies-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 2rem 1.5rem;
   }
-  
-  .color-block-3 {
-    width: 55%;
-    height: 40%;
+
+  .philosophy {
+    padding: 6rem 1.5rem;
+  }
+
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 }
 
-/* Subtle animation on load */
+/* Smooth animations */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -183,11 +289,24 @@ a {
   }
 }
 
-.company-name {
-  animation: fadeIn 1.2s ease-out;
+.hero-title,
+.hero-subtitle {
+  animation: fadeIn 0.8s ease-out;
 }
 
-.hero-content {
-  animation: fadeIn 1.4s ease-out 0.3s both;
+.philosophy-item {
+  animation: fadeIn 0.8s ease-out;
+  animation-fill-mode: both;
 }
 
+.philosophy-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.philosophy-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.philosophy-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
