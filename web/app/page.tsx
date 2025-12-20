@@ -1,23 +1,63 @@
 export default function Home() {
   return (
-    <main className="landing-page">
-      <div className="glow-panel primary"></div>
-      <div className="glow-panel accent"></div>
-      <div className="grain"></div>
-
-      <header className="page-header">
-        <h1 className="company-name">Maxwell&apos;s Demon</h1>
-      </header>
-
-      <div className="content-wrapper">
-        <div className="hero-content">
-          <p className="eyebrow">In-workflow risk intelligence</p>
-          <p className="hero-text">History only repeats itself if you let it.</p>
-          <p className="sub-text">
-            Maxwell&apos;s Demon turns past regressions into guardrails, and helps Engineers identify and resolve risk in-workflow before the moment of impact so they never make the same mistake twice.
-          </p>
+    <main className="main-container">
+      {/* Navigation */}
+      <nav className="nav">
+        <div className="nav-content">
+          <a href="#" className="nav-logo">Maxwell&apos;s Demon</a>
+          <div className="nav-links">
+            <a href="#philosophy">Philosophy</a>
+          </div>
         </div>
-      </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="hero">
+        <h1 className="hero-title">
+          Other tools show you problems.<br />
+          We prevent them from existing.
+        </h1>
+        <p className="hero-subtitle">
+          Trace incidents to root causes. Fix the system that caused it.
+        </p>
+      </section>
+
+      {/* Philosophy Section */}
+      <section id="philosophy" className="philosophy">
+        <h2 className="section-title">Our philosophy</h2>
+        <p className="philosophy-intro">
+          We have founded, operated and invested in some of the most iconic tech companies of our era. 
+          While we&apos;re proud of our past, we&apos;re just getting started.
+        </p>
+        
+        <div className="philosophy-grid">
+          <div className="philosophy-item">
+            <h3 className="philosophy-title">Conviction-led</h3>
+            <p className="philosophy-description">
+              We invest first.<br />
+              With unwavering conviction.
+            </p>
+          </div>
+          
+          <div className="philosophy-item">
+            <h3 className="philosophy-title">Relentless</h3>
+            <p className="philosophy-description">
+              We are relentless.<br />
+              Just like our founders.
+            </p>
+          </div>
+          
+          <div className="philosophy-item">
+            <h3 className="philosophy-title">Founder-centric</h3>
+            <p className="philosophy-description">
+              We work together.<br />
+              To shape a better future.
+            </p>
+          </div>
+        </div>
+        
+        <a href="#" className="meet-team-link">Meet the team</a>
+      </section>
     </main>
   )
 }
