@@ -63,9 +63,11 @@ a:hover {
 }
 
 .nav-logo {
-  font-size: 1.25rem;
-  font-weight: 500;
+  font-size: 60px;
+  font-weight: 900;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   letter-spacing: -0.02em;
+  color: rgba(0, 0, 0, 1);
 }
 
 .nav-links {
@@ -88,8 +90,8 @@ a:hover {
 
 .hero-title {
   display: flex;
-  font-size: 57px;
-  font-weight: 800;
+  font-size: 65px;
+  font-weight: 500;
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.1;
   letter-spacing: -0.03em;
@@ -104,6 +106,7 @@ a:hover {
   font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.5;
   color: #333333;
+  width: 900px;
   max-width: 900px;
   margin-top: 2rem;
 }
