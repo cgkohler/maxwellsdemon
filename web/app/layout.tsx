@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Maxwell\'s Demon',
-  description: 'Web application',
+  description: 'We do the impossible: decrease entropy in your engineering systems.',
 }
 
 export default function RootLayout({
